@@ -1,4 +1,3 @@
-
 :root {
   --color-bg-dark: #0a0a0a;      
   --color-bg-light: #ffffff;     
@@ -8,11 +7,14 @@
   --color-empresa-amarillo: #ffe600; 
   --color-empresa-verde: #00ff66;    
   --color-empresa-rojo: #ff3366;     
-  --color-empresa-azul: #0066ff;     
+  --color-empresa-azul: #0066ff;  
+  --color-empresa-morado: #9933ff;
 
   --border-brutalista: 2px solid #ffffff;
   --sombra-brutalista-amarillo: 4px 4px 0px #ffe600;
   --sombra-brutalista-verde: 4px 4px 0px #00ff66;
+
+  --title-font: font-family: 'Montserrat', sans-serif;
 }
 html, body {
   margin: 0;
