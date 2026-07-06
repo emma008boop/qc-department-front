@@ -1,0 +1,23 @@
+<nav class="navbar">
+  <div class="logo"></div>
+
+  <div class="navbar-menu" [class.open]="menuOpen()">
+    <ul class="nav-links">
+      <li><a href="#" class="active">QC</a></li>
+      <li><a href="#">MGA</a></li>
+      <li><a href="#">Training-Hub</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="btn-lang">
+        <span class="icon">🌐</span> ES
+      </button>
+    </div>
+  </div>
+
+  <button class="hamburger-btn" (click)="alternarMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+</nav>

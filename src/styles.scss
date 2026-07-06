@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --color-bg-dark: #0a0a0a;      
+  --color-bg-light: #ffffff;     
+  --color-text-dark: #ffffff;    
+  --color-text-light: #111111;   
+
+  --color-empresa-amarillo: #ffe600; 
+  --color-empresa-verde: #00ff66;    
+  --color-empresa-rojo: #ff3366;     
+  --color-empresa-azul: #0066ff;     
+
+  --border-brutalista: 2px solid #ffffff;
+  --sombra-brutalista-amarillo: 4px 4px 0px #ffe600;
+  --sombra-brutalista-verde: 4px 4px 0px #00ff66;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+::selection {
+  background-color: var(--color-empresa-amarillo);
+  color: #000000;
+}
