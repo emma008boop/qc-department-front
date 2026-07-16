@@ -1,3 +1,7 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 :root {
   --color-bg-dark: #0a0a0a;      
   --color-bg-light: #ffffff;     
@@ -14,15 +18,18 @@
   --sombra-brutalista-amarillo: 4px 4px 0px #ffe600;
   --sombra-brutalista-verde: 4px 4px 0px #00ff66;
 
-  --title-font: font-family: 'Montserrat', sans-serif;
+  --title-font: 'Montserrat', sans-serif;
 }
+
 html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  
+  width: 100%;
+  overflow-x: hidden; 
   
   background-color: var(--color-bg-light);
-  color: var(--color-text-dark);
+  color: var(--color-text-light); 
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
