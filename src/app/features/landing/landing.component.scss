@@ -1,154 +1,163 @@
-// Layout variables for scalability
-$hero-height: 100vh;
-$z-background: 1;
-$z-foreground: 2;
-
-.hero {
-  position: relative;
+.hero-section {
   width: 100%;
-  bottom: 50px;
-  height: $hero-height;
-  min-height: 600px;
+  min-height: calc(100vh - 90px);
+  background-color: var(--color-bg-dark, #0a0a0a);
   display: flex;
-  align-items: flex-end; // Aligns the content wrapper to the bottom like the design
+  align-items: center;
   justify-content: center;
-  background-color: var(--color-bg-light); // Soft greenish background from your image
+  padding: 2rem 4rem;
+  box-sizing: border-box;
   overflow: hidden;
-  padding: 2rem;
 
-  // Background Title Layer
-  &__title {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-52.9%);
-    font-size: clamp(1rem, 9vw, 8rem); // Scalable typography
-    font-weight: 900;
-    font-family: var(--title-font);
-    color: var(--color-empresa-morado); // Dark green
-    line-height: 0.8;
-    margin: 0;
-    z-index: $z-background;
-    white-space: nowrap;
-    user-select: none;
-
-    &--gradient {
-      color: var(--color-text-light); // Slightly different tone or gradient if needed
-    }
-  }
-
-  // Foreground Content Layer
-  &__content-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 1400px;
-    display: grid;
-    grid-template-columns: 1fr 1.2fr 1fr; // Middle column is slightly wider for the tree
-    gap: 2rem;
-    align-items: end;
-    z-index: $z-foreground; // Places everything in front of the h1 title
-    margin-bottom: 5vh;
-  }
-
-  &__column {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    &--left {
-      align-items: flex-start;
-    }
-
-    &--center {
-      align-items: center;
-      justify-content: flex-end;
-    }
-
-    &--right {
-      align-items: flex-end;
-      text-align: right;
-    }
-  }
-
-  // Component details
-  &__subtitle {
-    font-size: 1rem;
-    color: var(--color-text-light);
-    max-width: 280px;
-    line-height: 1.5;
-  }
-
-  &__badge {
-    display: flex;
-    gap: 1rem;
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(10px); // Clean glassmorphism effect
-    padding: 1rem;
-    border-radius: 12px;
-    max-width: 320px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-
-    &-title {
-      display: block;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-      color: #031b07;
-    }
-
-    p {
-      font-size: 0.85rem;
-      color: var(--color-text-light);
-      margin: 0;
-    }
-  }
-
-  // Image Area Definition
-  &__image-placeholder {
-    position: relative;
-    width: 100%;
-    height: 65vh; // Keeps space proportional to viewport height
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-
-    img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-  }
-
-  &__annotation-arrow {
-    position: absolute;
-    right: -20px;
-    top: 30%;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--color-empresa-azul);
-    // Add custom arrow background or pseudo-elements if needed
-  }
-
-  &__feature-text {
-    font-size: 0.95rem;
-    color: var(--color-text-light);
-    max-width: 280px;
-    line-height: 1.5;
+  @media (max-width: 900px) {
+    padding: 2rem 1.5rem;
   }
 }
-.news {
-  min-height: 100vh;
+
+.hero-container {
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: 1fr 550px; 
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr 450px;
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.hero-left {
   display: flex;
   flex-direction: column;
-  align-items: center;   
-  width: 100%;             
-  padding: 2rem;           
+  gap: 2.5rem;
+  z-index: 2;
+  position: relative;
+}
 
-  &__title {
-    font-family: var(--title-font);
-    font-size: clamp(1rem, 4vw, 5rem);
-    color: var(--color-empresa-azul);
+.hero-brand-title {
+  position: relative;
+
+  h1 {
+    font-size: clamp(5.5rem, 8.5vw, 11rem); 
+    font-weight: 800;
+    line-height: 0.88;
+    color: var(--color-text-white, #ffffff);
+    margin: 0 0 2.2rem 0;
+    letter-spacing: -0.03em;
+    white-space: nowrap; 
+    width: max-content;
+    pointer-events: none;
+
+    .highlight {
+      color: var(--color-empresa-amarillo, #ffcc00);
+      display: inline-block;
+    }
+
+    @media (max-width: 992px) {
+      white-space: normal;
+      width: auto;
+    }
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 1.1vw, 1.15rem);
+    line-height: 1.6;
+    color: var(--color-text-muted, #8e8e93);
+    margin: 0;
+    max-width: 480px;
+  }
+}
+
+.hero-badge {
+  background-color: var(--color-bg-card, #141416);
+  border: 1px solid var(--color-border-subtle, rgba(255, 255, 255, 0.08));
+  border-left: 3px solid var(--color-empresa-azul, #00d2ff);
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  max-width: 420px;
+
+  .badge-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--color-empresa-azul, #00d2ff);
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  .badge-text {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-white, #ffffff);
+  }
+}
+
+
+.hero-right {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.truck-stage {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .truck-wrapper {
     position: relative;
-    text-align: center;    
-    margin-bottom: 2rem;   
+    z-index: 4; 
+    width: 135%;
+    transform: translateX(-220px); 
+
+    @media (max-width: 992px) {
+      width: 100%;
+      transform: none;
+    }
+
+    .truck-img {  // @note
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      position: relative;
+      top: 50px;
+      z-index: 2;
+      filter: none !important;
+      transition: transform 0.4s ease-out;
+      transform: scale(1.4);
+
+      &:hover {
+        transform: translateY(-4px), scale(1.4);
+      }
+    }
+
+    .ground-shadow {
+      position: absolute;
+      bottom: 12px;
+      left: 3%;
+      width: 94%;
+      height: 24px;
+      z-index: 1;
+      border-radius: 50%;
+      background: radial-gradient(
+        ellipse at center, 
+        rgba(0, 0, 0, 0.95) 0%, 
+        rgba(0, 0, 0, 0.5) 50%, 
+        transparent 80%
+      );
+      filter: blur(8px);
+      pointer-events: none;
+    }
   }
 }

@@ -3,34 +3,39 @@
 }
 
 :root {
+  /* Modificado para que el modo oscuro sea la base por defecto */
   --color-bg-dark: #0a0a0a;      
-  --color-bg-light: #ffffff;     
-  --color-text-dark: #ffffff;    
-  --color-text-light: #111111;   
+  --color-bg-card: #141416;
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
 
+  --color-text-white: #ffffff;    
+  --color-text-muted: #8e8e93;   
+
+  /* Colores de marca */
   --color-empresa-amarillo: #ffe600; 
   --color-empresa-verde: #00ff66;    
   --color-empresa-rojo: #ff3366;     
   --color-empresa-azul: #0066ff;  
   --color-empresa-morado: #9933ff;
 
-  --border-brutalista: 2px solid #ffffff;
-  --sombra-brutalista-amarillo: 4px 4px 0px #ffe600;
-  --sombra-brutalista-verde: 4px 4px 0px #00ff66;
+  /* Bordes y Sombras estilizados tipo Robi DSG */
+  --border-subtle: 1px solid var(--color-border-subtle);
 
+  /* Tipografías */
   --title-font: 'Montserrat', sans-serif;
+  --body-font: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 html, body {
   margin: 0;
   padding: 0;
-  
   width: 100%;
   overflow-x: hidden; 
   
-  background-color: var(--color-bg-light);
-  color: var(--color-text-light); 
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  /* Ahora la base por defecto es oscura */
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-white); 
+  font-family: var(--body-font);
 }
 
 ::selection {

@@ -11,7 +11,9 @@
   width: 92%;
   max-width: 1200px;
   box-sizing: border-box;
-  position: relative;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
 
   .logo {

@@ -1,0 +1,30 @@
+name: Verificación de Código
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+jobs:
+  construir-y-probar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar código del repositorio
+        uses: actions/checkout@v4
+
+      # Paso B: Instala Node.js en ese servidor virtual
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Usa la versión de Node que necesites
+
+      # Paso C: Descarga las librerías de tu proyecto (como npm install)
+      - name: Instalar dependencias
+        run: npm ci
+
+      # Paso D: Compila el proyecto para ver si hay errores de TypeScript o Angular
+      - name: Compilar proyecto
+        run: npm run build --if-present

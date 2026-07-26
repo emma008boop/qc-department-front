@@ -1,52 +1,36 @@
-<main>
 
-  <section class="hero">
-    <h1 class="hero__title">Quality<span class="hero__title--gradient">Control</span></h1>
+<section class="hero-section">
+  <div class="hero-container">
     
-    <div class="hero__content-wrapper">
-      
-      <div class="hero__column hero__column--left">
-        <p class="hero__subtitle">
-          We ensure compliance and mitigate risks to safeguard the continuity and value of each policy
+    <div class="hero-left">
+      <div class="hero-brand-title">
+        <h1>Quality<span class="highlight">Control</span></h1>
+        <p class="hero-subtitle">
+          Ensuring technical excellence and continuous risk mitigation to safeguard the long-term value of each policy.
         </p>
-        
-        <div class="hero__badge">
-          <div class="hero__badge-icon">
-          </div>
-          <div class="hero__badge-text">
-            <span class="hero__badge-title">The QC Mission</span>
-            <p>Risk mitigation that drives policy retention</p>
-          </div>
-        </div>
       </div>
-      
-      <div class="hero__column hero__column--center">
-        <div class="hero__image-placeholder">
-          <span class="hero__annotation-arrow">Intelligence risk System</span>
-        </div>
+
+      <!-- Misión -->
+      <div class="hero-badge">
+        <span class="badge-tag">THE QC MISSION</span>
+        <p class="badge-text">Risk mitigation that drives policy retention</p>
       </div>
-      
-      <div class="hero__column hero__column--right">
-        <div class="hero__feature-text">
-          <p>Ensuring technical excellence and compliance to secure long-term policy value.</p>
-        </div>
-      </div>
-      
     </div>
-  </section>
-  <section class="news">
-  <h2 class="news__title">News</h2>
-  <div class="news-grid">
-    @for (news of newsList; track $index) {
-        <app-news-card
-            [imageSrc]="news.imageSrc"
-            [imageAlt]="news.imageAlt"
-            [title]="news.title"
-            [description]="news.description"
-            [label]="news.label"
-            [date]="news.date">
-        </app-news-card>
-    }
+
+    <!--Truck-->
+    <div class="hero-right">  
+      <div class="truck-stage">
+
+        <div class="truck-wrapper">
+          <img 
+            src="images/truck_tractor.png" 
+            alt="Freightliner Cascadia" 
+            class="truck-img" 
+          />
+          <div class="ground-shadow"></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
-</main>
